@@ -1,9 +1,9 @@
 import { prisma } from "../configs/database.config.js";
 import { Config } from "../configs/server.config.js";
 import { loginService, signupService, updatePasswordService } from "../services/auth.service.js";
-import  ApiError  from "../utils/ApiError.util.js";
-import ApiResponse from "../utils/apiresponse.util.js";
-import {asyncHandler} from "../utils/asynchandler.util.js";
+import  ApiError  from "../utils/ApiError.js";
+import ApiResponse from "../utils/apiResponse.js";
+import {asyncHandler} from "../utils/asyncHandler.js";
 import { StatusCodes } from "http-status-codes";
 
 const signUpController = asyncHandler(async (req, res) => {

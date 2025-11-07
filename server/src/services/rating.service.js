@@ -1,6 +1,6 @@
 import { StatusCodes } from "http-status-codes";
 import RatingRepository from "../repositories/rating.repository.js";
-import  ApiError  from "../utils/ApiError.util.js";
+import  ApiError  from "../utils/ApiError.js";
 import { prisma } from "../configs/database.config.js";
 
 const ratingRepo = new RatingRepository();
