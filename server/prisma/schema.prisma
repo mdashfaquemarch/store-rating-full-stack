@@ -1,0 +1,110 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  SYSTEM_ADMIN
+  NORMAL_USER
+  STORE_OWNER
+}
+
+model User {
+  id        String   @id @default(uuid())
+  name      String   @db.VarChar(60)
+  email     String   @unique @db.VarChar(255)
+  password  String   @db.VarChar(255) // Will store hashed password
+  address   String   @db.VarChar(400)
+  role      Role     @default(NORMAL_USER)
+  refreshToken String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  // Relations
+  store     Store?   // One-to-one: A user can own one store (if STORE_OWNER)
+  ratings   Rating[] // One-to-many: A user can submit many ratings
+  
+  @@index([email])
+  @@index([name])
+  @@index([role])
+  @@map("users")
+}
+
+model Store {
+  id        String   @id @default(uuid())
+  name      String   @db.VarChar(60)
+  email     String   @unique @db.VarChar(255)
+  address   String   @db.VarChar(400)
+  ownerId   String   @unique // Foreign key to User
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  // Relations
+  owner     User     @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  ratings   Rating[] // One-to-many: A store can have many ratings
+  
+  @@index([name])
+  @@index([email])
+  @@index([address])
+  @@map("stores")
+}
+
+model Rating {
+  id        String   @id @default(uuid())
+  rating    Int      @db.SmallInt // 1 to 5
+  userId    String   // Foreign key to User
+  storeId   String   // Foreign key to Store
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  // Relations
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  store     Store    @relation(fields: [storeId], references: [id], onDelete: Cascade)
+  
+  // A user can only rate a store once
+  @@unique([userId, storeId])
+  @@index([storeId])
+  @@index([userId])
+  @@map("ratings")
+}
+
+// Statistics views can be created using Prisma queries or raw SQL
+// Example queries to get statistics:
+
+// Total users: await prisma.user.count()
+// Total stores: await prisma.store.count()
+// Total ratings: await prisma.rating.count()
+
+// Average rating for a store:
+// await prisma.rating.aggregate({
+//   where: { storeId: 'store-id' },
+//   _avg: { rating: true }
+// })
+
+// Get store with average rating:
+// await prisma.store.findMany({
+//   include: {
+//     _count: { select: { ratings: true } },
+//     ratings: {
+//       select: {
+//         rating: true
+//       }
+//     }
+//   }
+// })
+
+// User's rating for a specific store:
+// await prisma.rating.findUnique({
+//   where: {
+//     userId_storeId: {
+//       userId: 'user-id',
+//       storeId: 'store-id'
+//     }
+//   }
+// })
