@@ -1,7 +1,7 @@
 import { StatusCodes } from "http-status-codes";
 import { createUserService, dashboardStatsService, getAllStoresService, getAllUserService, getUserDetailsByIdService } from "../services/system.service.js";
-import { asyncHandler } from "../utils/asyncHandler.util.js";
-import ApiResponse from "../utils/ApiResponse.util.js";
+import { asyncHandler } from "../utils/asynchandler.util.js";
+import ApiResponse from "../utils/apiresponse.util.js";
 
 
 // POST /api/admin/users

@@ -1,6 +1,6 @@
 import { StatusCodes } from "http-status-codes";
-import { asyncHandler } from "../utils/asyncHandler.util.js";
-import ApiResponse from "../utils/ApiResponse.util.js";
+import { asyncHandler } from "../utils/asynchandler.util.js";
+import ApiResponse from "../utils/apiresponse.util.js";
 import { adminDashBoardService, storeDashBoardService } from "../services/dashboard.service.js";
 
 
