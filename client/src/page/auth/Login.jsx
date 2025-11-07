@@ -40,17 +40,26 @@ const LoginPage = () => {
       <div className="w-full max-w-md">
         <Card>
           <CardHeader>
-            <CardTitle className="text-2xl font-bold text-center">Login</CardTitle>
+            <CardTitle className="text-2xl font-bold text-center">
+              Login
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
               <div>
+                <p className="text-blue-600">
+                  <h4>SYSTEM_ADMIN -- one@gmail.com , 825409</h4>
+                  <h4>NORMAL_USER -- clark@gmail.com , 825409</h4>
+                  <h4>STORE_OWNER -- arjun@gmail.com , 825409</h4>
+                </p>
                 <Label>Email</Label>
                 <Input
                   type="email"
                   placeholder="Enter your email"
                   value={loginForm.email}
-                  onChange={(e) => setLoginForm({ ...loginForm, email: e.target.value })}
+                  onChange={(e) =>
+                    setLoginForm({ ...loginForm, email: e.target.value })
+                  }
                 />
               </div>
 
@@ -60,7 +69,9 @@ const LoginPage = () => {
                   type="password"
                   placeholder="Enter your password"
                   value={loginForm.password}
-                  onChange={(e) => setLoginForm({ ...loginForm, password: e.target.value })}
+                  onChange={(e) =>
+                    setLoginForm({ ...loginForm, password: e.target.value })
+                  }
                 />
               </div>
 
