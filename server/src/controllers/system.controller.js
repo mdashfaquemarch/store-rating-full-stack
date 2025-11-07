@@ -1,12 +1,13 @@
 import { StatusCodes } from "http-status-codes";
 import { createUserService, dashboardStatsService, getAllStoresService, getAllUserService, getUserDetailsByIdService } from "../services/system.service.js";
-import { asyncHandler } from "../utils/asyncHandler.js";
+import { asyncHandler } from "../utils/asynchandler.util.js";
 import ApiResponse from "../utils/apiResponse.js";
 
 
 // POST /api/admin/users
 const createUserController = asyncHandler(async (req, res) => {
     // const { name, email, address, password, role, store } = req.body;
+    console.log(req.body);
     const response = await createUserService(req.body);
 
     return res

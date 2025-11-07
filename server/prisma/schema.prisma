@@ -74,37 +74,3 @@ model Rating {
   @@map("ratings")
 }
 
-// Statistics views can be created using Prisma queries or raw SQL
-// Example queries to get statistics:
-
-// Total users: await prisma.user.count()
-// Total stores: await prisma.store.count()
-// Total ratings: await prisma.rating.count()
-
-// Average rating for a store:
-// await prisma.rating.aggregate({
-//   where: { storeId: 'store-id' },
-//   _avg: { rating: true }
-// })
-
-// Get store with average rating:
-// await prisma.store.findMany({
-//   include: {
-//     _count: { select: { ratings: true } },
-//     ratings: {
-//       select: {
-//         rating: true
-//       }
-//     }
-//   }
-// })
-
-// User's rating for a specific store:
-// await prisma.rating.findUnique({
-//   where: {
-//     userId_storeId: {
-//       userId: 'user-id',
-//       storeId: 'store-id'
-//     }
-//   }
-// })

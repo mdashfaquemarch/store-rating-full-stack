@@ -31,3 +31,9 @@ export const fetchAdminDashboardData = async () => {
     throw error;
   }
 };
+
+export const createUser = async (data) => {
+  const res = await api.post("/system/", data);
+  console.log("user creation res", res.data);
+  return res.data;
+}

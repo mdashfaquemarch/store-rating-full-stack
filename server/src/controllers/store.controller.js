@@ -1,6 +1,6 @@
 import { StatusCodes } from "http-status-codes";
 import { fetchUserlistOfRatingService, getAllStoreService, getStoreByIdService} from "../services/store.service.js";
-import { asyncHandler } from "../utils/asyncHandler.js";
+import { asyncHandler } from "../utils/asynchandler.util.js";
 import ApiResponse from "../utils/apiResponse.js";
 
 

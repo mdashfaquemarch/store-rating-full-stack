@@ -74,3 +74,88 @@ server/
 
 - `GET /api/v1/dashboard/admin` - System statistics
 - `GET /api/v1/dashboard/store` - Store metrics
+
+# Setup and Installation Guide
+
+## Backend Setup
+
+### 1. Navigate to the Server Directory
+
+Open your terminal and navigate to the backend/server folder:
+
+```bash
+cd server
+```
+
+### 2. Install Dependencies
+
+Install all required packages:
+
+```bash
+npm install
+```
+
+### 3. Set Up Environment Variables
+
+Create a `.env` file in the `server` directory if it doesn't exist. Add your database connection string and any other necessary environment variables.
+
+**Example `.env` file:**
+
+```
+DATABASE_URL="postgresql://username:password@localhost:5432/database_name"
+JWT_SECRET="your_jwt_secret_key"
+PORT=5000
+```
+
+### 4. Run Database Migrations
+
+If using Prisma, run the migrations to set up the database schema:
+
+```bash
+npx prisma migrate dev
+```
+
+### 5. Start the Backend Server
+
+Start the backend server:
+
+```bash
+npm run dev
+```
+
+The server should now be running at: http://localhost:5000
+
+## Frontend Setup
+
+### 1. Navigate to the Client Directory
+
+Open a new terminal window and navigate to the frontend/client folder:
+
+```bash
+cd client
+```
+
+### 2. Install Dependencies
+
+Install all required packages:
+
+```bash
+npm install
+```
+
+### 3. Start the Frontend Development Server
+
+Start the frontend development server:
+
+```bash
+npm start
+```
+
+The frontend should now be running at: http://localhost:3000
+
+## Accessing the Application
+
+1. Open your web browser and go to **http://localhost:3000** to access the frontend.
+2. The frontend will communicate with the backend running on **http://localhost:5000**.
+
+Both servers should now be running and ready for development.
