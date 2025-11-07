@@ -1,8 +1,8 @@
 import { prisma } from "../configs/database.config.js";
 import { Config } from "../configs/server.config.js";
 import { loginService, signupService, updatePasswordService } from "../services/auth.service.js";
-import { ApiError } from "../utils/ApiError.util.js";
-import ApiResponse from "../utils/ApiResponse.util.js";
+import { ApiError } from "../utils/apiError.util.js";
+import ApiResponse from "../utils/apiResponse.util.js";
 import {asyncHandler} from "../utils/asyncHandler.util.js";
 import { StatusCodes } from "http-status-codes";
 
