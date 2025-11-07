@@ -1,6 +1,6 @@
 import { StatusCodes } from "http-status-codes";
 import UserRepository from "../repositories/user.repository.js"
-import { ApiError } from "../utils/apierror.util.js";
+import  ApiError  from "../utils/ApiError.util.js";
 import { comparePassword, generateAccessToken, generateRefreshToken, hashPassword } from "../utils/helper.util.js";
 
 const userRepo = new UserRepository();

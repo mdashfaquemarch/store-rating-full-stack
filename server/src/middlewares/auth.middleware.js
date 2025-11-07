@@ -1,5 +1,5 @@
 import { StatusCodes } from "http-status-codes";
-import { ApiError } from "../utils/apierror.util.js";
+import  ApiError  from "../utils/ApiError.util.js";
 import { asyncHandler } from "../utils/asynchandler.util.js";
 import jwt from 'jsonwebtoken'
 import { Config , prisma} from "../configs/index.js";

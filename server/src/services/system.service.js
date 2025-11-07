@@ -2,7 +2,7 @@ import { StatusCodes } from "http-status-codes";
 import RatingRepository from "../repositories/rating.repository.js";
 import StoreRepository from "../repositories/store.repository.js";
 import UserRepository from "../repositories/user.repository.js";
-import { ApiError } from "../utils/apierror.util.js";
+import  ApiError  from "../utils/ApiError.util.js";
 import { hashPassword, Roles } from "../utils/helper.util.js";
 
 const userRepo = new UserRepository();

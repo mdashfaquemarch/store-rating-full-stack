@@ -1,7 +1,7 @@
 
 
 
-export class ApiError extends Error {
+ class ApiError extends Error {
 
     constructor(message, statusCode = 500, details = null) {
         super(message);
@@ -14,11 +14,13 @@ export class ApiError extends Error {
     }
 }
 
+export default ApiError;
 
-export class BadRequestError extends Error {
 
-    constructor(message="Bad request") {
-        super(message, statusCode=400)
-    }
-}
+// export class BadRequestError extends Error {
+
+//     constructor(message="Bad request") {
+//         super(message, statusCode=400)
+//     }
+// }
 
