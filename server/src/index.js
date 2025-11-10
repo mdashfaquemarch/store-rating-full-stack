@@ -16,7 +16,20 @@ dotenv.config({
 
 
 app.use(
-  cors()
+  cors({
+    origin: [
+      process.env.FRONTEND
+    ],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: [
+      "Content-Type",
+      "Authorization",
+      "X-Requested-With",
+      "Accept",
+      "Origin",
+    ],
+    credentials: true, // allow cookies/auth headers
+  })
 );
 
 
