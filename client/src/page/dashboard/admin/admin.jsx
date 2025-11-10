@@ -6,8 +6,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
 import { Search, LogOut, Loader2 } from "lucide-react";
 import { fetchAdminDashboardData, createUser } from "../../../api/admin.js";
-import { useAuth } from "../../../context/AuthContext";
-import { logout } from "../../../api/auth";
+import { useAuth } from "../../../context/AuthContext.jsx";
+import { logout } from "../../../api/auth.js";
 import { useNavigate } from "react-router-dom";
 
 const AdminDashboard = () => {

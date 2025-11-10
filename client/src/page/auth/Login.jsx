@@ -3,10 +3,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { login } from "../../api/auth";
-import { useAuth } from "../../context/AuthContext";
+import { login } from "../../api/auth.js";
+import { useAuth } from "../../context/AuthContext.jsx";
 import { useNavigate } from "react-router-dom";
-import { Roles } from "../../constants/roles";
+import { Roles } from "../../constants/roles.js";
 
 const LoginPage = () => {
   const [loginForm, setLoginForm] = useState({ email: "", password: "" });

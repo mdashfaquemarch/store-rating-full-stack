@@ -4,9 +4,9 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search, Star, LogOut } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../../context/AuthContext";
-import { logout } from "../../../api/auth";
-import { fetchAllStoresWithAverageRating } from "../../../api/store"; // ✅ import API call
+import { useAuth } from "../../../context/AuthContext.jsx";
+import { logout } from "../../../api/auth.js";
+import { fetchAllStoresWithAverageRating } from "../../../api/store.js"; // ✅ import API call
 import {
   Dialog,
   DialogContent,

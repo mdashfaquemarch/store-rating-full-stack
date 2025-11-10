@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
-import LoginPage from "./page/auth/login";
-import SignupPage from "./page/auth/signup";
-import ProtectedRoute from "./components/ProtectedRoute";
+import LoginPage from "./page/auth/Login";
+import SignupPage from "./page/auth/Signup";
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import AdminDashboard from "./page/dashboard/admin/admin";
 import StoreOwnerDashboard from "./page/dashboard/store_owner/store";
 import UserDashboard from "./page/dashboard/user/user";

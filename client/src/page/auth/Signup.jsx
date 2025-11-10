@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { signup } from "../../api/auth";
+import { signup } from "../../api/auth.js";
 import { useNavigate } from "react-router-dom";
 
 const SignupPage = () => {
