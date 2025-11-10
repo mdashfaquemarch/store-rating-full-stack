@@ -18,7 +18,9 @@ dotenv.config({
 app.use(
   cors({
     origin: [
-      process.env.FRONTEND
+      process.env.FRONTEND,
+      "http://localhost:5173",
+      "http://localhost:5174",
     ],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: [
