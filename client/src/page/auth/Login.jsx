@@ -48,9 +48,9 @@ const LoginPage = () => {
             <div className="space-y-4">
               <div>
                 <p className="text-blue-600">
-                  <h4>SYSTEM_ADMIN -- one@gmail.com , 825409</h4>
-                  <h4>NORMAL_USER -- clark@gmail.com , 825409</h4>
-                  <h4>STORE_OWNER -- arjun@gmail.com , 825409</h4>
+                  <h4>SYSTEM_ADMIN -- admin@gmail.com , 825409</h4>
+                  <h4>NORMAL_USER -- adi@gmail.com , 825409</h4>
+                  <h4>STORE_OWNER -- kundan@gmail.com , 825409</h4>
                 </p>
                 <Label>Email</Label>
                 <Input
