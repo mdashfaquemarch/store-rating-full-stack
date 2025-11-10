@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE = "https://store-rating-backend-xuoa.onrender.com/api/v1";
+const API_BASE = "http://localhost:4000/api/v1";
 
 const api = axios.create({
   baseURL: API_BASE,
