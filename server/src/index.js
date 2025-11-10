@@ -14,14 +14,26 @@ dotenv.config({
 })
 
 
-app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "http://localhost:5174",
-    process.env.FRONTEND
-  ],
-  credentials: true, 
-}));
+
+app.use(
+  cors({
+    origin: [
+      process.env.FRONTEND
+    ],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: [
+      "Content-Type",
+      "Authorization",
+      "X-Requested-With",
+      "Accept",
+      "Origin",
+    ],
+    credentials: true, // allow cookies/auth headers
+  })
+);
+
+// Handle preflight requests
+app.options("*", cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
